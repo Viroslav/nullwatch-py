@@ -69,6 +69,11 @@ print(eval_.notes)    # 'Hallucinated spans detected: "80 million" (conf=0.97)'
 
 Validates LLM-generated tool calls against a schema — catches fabricated tool names, misspelled arguments, and wrong types. No ML model needed.
 
+You can pass either:
+
+- the compact `nullwatch-py` schema format shown below, or
+- the same OpenAI-style `tools=[...]` JSON schema you send to the model
+
 ```python
 scorer = ToolCallScorer(tools=[{
     "name": "search_web",
