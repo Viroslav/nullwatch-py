@@ -2,14 +2,31 @@
 
 Python SDK for [nullwatch](https://github.com/nullclaw/nullwatch).
 
-The core client has no required dependencies — it uses stdlib only. Hallucination detection requires `lettucedetect`.
-
 ## Install
+
+Until the first PyPI release is published, install from GitHub:
+
+```bash
+pip install git+https://github.com/nullclaw/nullwatch-python-sdk.git
+```
+
+If you want the optional RAG scorers:
+
+```bash
+git clone https://github.com/nullclaw/nullwatch-python-sdk.git
+cd nullwatch-python-sdk
+pip install -r requirements.txt
+```
+
+After the package is published to PyPI, the standard install will be:
 
 ```bash
 pip install nullwatch-py
 pip install "nullwatch-py[rag]"  # with hallucination detection
+pip install -r requirements.txt  # local checkout with RAG extras
 ```
+
+`pip install nullwatch-py` will fail on machines where the package has not been published to PyPI yet.
 
 ## Usage
 
