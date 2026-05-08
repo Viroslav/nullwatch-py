@@ -66,6 +66,8 @@ client.ingest_eval(Eval(
 
 Uses [LettuceDetect](https://github.com/KRLabsOrg/LettuceDetect) (`lettucedect-large-modernbert-en-v1`) — a ModernBERT token classifier that identifies which spans of an answer are not supported by the retrieved context.
 
+By default the scorer is strict: if it finds any unsupported answer span above the confidence threshold, the eval verdict is `fail`. You can relax this by passing a larger `fail_threshold` if you want to tolerate small unsupported fragments.
+
 ```python
 scorer = RAGHallucinationScorer()
 
